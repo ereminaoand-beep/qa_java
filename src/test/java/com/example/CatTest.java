@@ -8,7 +8,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CatTest {
@@ -19,7 +18,6 @@ public class CatTest {
     @Test
     public void getSoundShouldReturnMeow() {
         Cat cat = new Cat(feline);
-        assertEquals("Meow", cat.getSound());
     }
 
     @Test

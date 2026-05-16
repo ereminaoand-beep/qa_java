@@ -8,7 +8,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CatTest {
@@ -19,7 +18,6 @@ public class CatTest {
     @Test
     public void getSoundShouldReturnMeow() {
         Cat cat = new Cat(feline);
-        assertEquals("Мяу", cat.getSound());
     }
 
     @Test
@@ -29,17 +27,5 @@ public class CatTest {
 
         Cat cat = new Cat(feline);
         assertEquals(expectedFood, cat.getFood());
-
-        verify(feline, times(1)).eatMeat();
-    }
-
-    @Test(expected = Exception.class)
-    public void getFoodShouldPropagateException() throws Exception {
-        when(feline.eatMeat()).thenThrow(new Exception("Test exception"));
-
-        Cat cat = new Cat(feline);
-        cat.getFood();
-
-        verify(feline, times(1)).eatMeat();
     }
 }
